@@ -1,5 +1,43 @@
 import streamlit as st
 
+page_bg = """
+    <style>
+    .stApp {
+    background-color: #333333;
+    font-family: "Countier New", monospace;
+    }
+    h1 {
+    color: #ff2800;
+    text-decoration: underline;
+    font-family : "Courier New" , monospace;
+    font-style: bold;
+    }
+    span, label {
+    color: white,
+    font-family: "Countier New", monospace;
+    }
+    blockquote, p.quote {
+    font-family: "Countier New", monospace;
+    font-style: italic;
+    color: #fcc00;
+    }
+    div.stButton > button {
+    backgroud-color:#333333;
+    colour: white;
+    border-radius: 10px;
+    border: 1px solid #ff2800;
+    }
+    div[data-baseweb="slider"] > div > div {
+    background: #ff2800 !important;
+    }
+    div[data-baseweb="slider"] > div > div > div {
+    background: #ff2800 !important;
+    }
+    div[data-testid="stProgressBar"] > div > div {
+    background-color: #ff2800 !important;
+    }
+    </style>
+    """
 if "index" not in st.session_state:
     st.session_state["index"] = 0
 
@@ -115,13 +153,13 @@ elif st.session_state["index"] == 6:
     st.write("B) Ich möchte meinen Fokus auf die Inzinierung des Krieges legen. Ich werde mit dem Ädilen Spiele planen. Am besten auch schon eine Statur um mich als erfolgreichen Feldherren zu inszinieren.")
     st.write("C) Ich versuche direkt mit den Stämmen die ich angreife in Kontakt zu kommen und ihnen die Vorteile der römischen Zivilisation zu erklären.")
 
-if st.session_state["index"] == 10:
+elif st.session_state["index"] == 10:
     st.write("Ok, der Quästor ist auf deiner Seite und ihr habt schon ein Gesetz besprochen, um die Steuern zu senken. Aber die Bevölkerung empört sich mehrheitlich über die Steuererhöhung.")
 
     if st.button("OK", key = "ok_5"):
         st.session_state["index"] += 24 #34
 
-if st.session_state["index"] == 34:
+elif st.session_state["index"] == 34:
     st.header("Wie reagierst du?")
 
     col1, col2, col3 = st.columns(3)
@@ -148,7 +186,7 @@ elif st.session_state["index"] == 38:
     if st.button("OK", key = "ok_5"):
         st.session_state["index"] += 1 #39
 
-if st.session_state["index"] == 39:
+elif st.session_state["index"] == 39:
     
     col1, col2, col3 = st.columns(3)
 
@@ -169,13 +207,13 @@ if st.session_state["index"] == 39:
     st.write("B) Ich bleibe bei meinem Standpunkt und spreche die Probleme des Volkes und unserer Krieger anzusprechen. In den Standeskämpfen kann mir das eventuell auch Vorteile verschaffen.")
     st.write("C) Ich trete zurück, da ich mit der Verantwortung nicht mehr umgehen kann.")
 
-if st.session_state["index"] == 42:
+elif st.session_state["index"] == 42:
     st.write("Deine Angstrhetorik hat nur teilweise funktioniert. Die Stimmung ist angespannd zwischen Hass bezüglich der Regierung und Angst vor dem Feind. Das stärkt die radikale Opposition der Plebejer und die neuen Steuererhöhungen werden nicht von allen akzeptiert.")
 
     if st.button("OK", key = "ok_6"):
         st.session_state["index"] += 3
 
-if st.session_state["index"] == 45:
+elif st.session_state["index"] == 45:
 
     col1, col2, col3 = st.columns(3)
 
@@ -196,13 +234,13 @@ if st.session_state["index"] == 45:
     st.write("B) Ich verstärke die militäreische Präsenz in Rom und bereite mich auf eine mögliche gewaltsame Unterdrückung vor, falls die Plebejer tatsächlich ausziehen sollten.")
     st.write("C) Ich versuche den Fokus der Regierung und die Investition unserer Resourcen auf die Armee zu zentrisieren. So haben wir bessere Chancen mit einem Sieg die innenpolitische Krise zu überschatten.")
 
-if st.session_state["index"] == 46:
+elif st.session_state["index"] == 46:
     st.write("Die verhoften Skandale sind eingetroffen, aber vielen Pleberjern bleibt dein Handeln besonders im Kopf, da sie die neue höhere Steuer im alltäglichen Leben belastent.")
 
     if st.button("OK", key = "ok_7"):
         st.session_state["index"] += 10 #56
 
-if st.session_state["index"] == 56:
+elif st.session_state["index"] == 56:
 
     col1, col2, col3 = st.columns(3)
 
@@ -336,13 +374,13 @@ elif st.session_state["index"] == 111:
     st.write("B) Ich versuche die Patrizier zu beschwichtigen, indem ich in einigen symbolischen Fällen härter gegen Plejern urteile. So zeige ich, dass ich mich 'neutral' verhalte und nicht den Plebjern besonders vollwollend gegenüber stehe.")
     st.write("C) Ich ich fokusiere mich darauf, dass die niedrigeren Steuern den Patriziern mit ihrem höheren Einkommen mehr zugute kommen.")
 
-if st.session_state["index"] == 15:
+elif st.session_state["index"] == 15:
     st.write("Die Patrizier respektieren deine Prinzipientreue und die schlechtere Finanzierung sorgt für weniger Prozesse. Offiziell gehen also die dokumentierten Straftaten runter. Aber die Situation im Volk wird langsam in mitleidenschaft gezogen, da besonders dijenigen ohne finanzielle Perspektiven häufiger Lebensmittel stehlen, da sie kam noch befürchten müssen dafür bestraft zu werden.")
 
     if st.button("OK", key = "ok_9"):
         st.session_state["index"] += 50 #65
 
-if st.session_state["index"] == 65:
+elif st.session_state["index"] == 65:
 
     col1, col2, col3 = st.columns(3)
 
@@ -363,14 +401,14 @@ if st.session_state["index"] == 65:
     st.write("B) Ich verlange hohe Gebühren für den Kläger, so bekommt die Justiz mehr Geld ohne das Steuergelder dafür verwendet werden.")
     st.write("C) Ich beauftrage lokale Richter eigenständig Lösungen zu finden. Wenn ich die Verantwortung abgebe, dann kann ich mich um andere Punkte fokusieren.")
 
-if st.session_state["index"] == 19:
+elif st.session_state["index"] == 19:
 
     st.write("Die Angstpropaganda gegen neue Staatsbürger führt zu ethnischen Spannungen in Rom. Einige Bürger fordern jetzt die Stoppung der Eroberung, um neue Bürger fernzuhalten.")
 
     if st.button("OK", key = "ok_10"):
         st.session_state["index"] += 49 # 68
 
-if st.session_state["index"] == 68:
+elif st.session_state["index"] == 68:
 
     col1, col2, col3 = st.columns(3)
 
@@ -449,13 +487,13 @@ elif st.session_state["index"] == 3600:
 
 
 
-if st.session_state["index"] == 3100:
+elif st.session_state["index"] == 3100:
     st.write("Du bist der Ädiler und damit verantwortlich für das Bauwesen, die Tempel und Spiele. In der aktuell angespannten Situation hast du die Möglichkeit besonders die Bevölkerung aufzuheitern. Wobei dir durch die Kriege aktuell weniger Geld zu verfügung steht.")
 
     if st.button("OK", key = "ok_13"):
         st.session_state["index"] += 200 #204
 
-if st.session_state["index"] == 204:
+elif st.session_state["index"] == 204:
     st.header("Wie gehst du mit der Situation um?")
 
     col1, col2, col3 = st.columns(3)
@@ -476,13 +514,13 @@ if st.session_state["index"] == 204:
     st.write("B) Durch die Kriege sind viele Gebäude zerstört. Ich sollte all mein Geld darauf konzentrieren. Denn die zerstärten Gebäude wirken wie Wunden den man im Alltag ständig begegnet, auch für die neuen Bürger.")
     st.write("C) Ich sollte mich auf den Glauben der Römer fokusieren und besonders viel Geld in die Tempel investieren. Der Glaube gibt der Römern Kraft, besonder der Kriegsgott Mars zu Zeiten des Krieges.")
 
-if st.session_state["index"] == 208:
+elif st.session_state["index"] == 208:
     st.write("Deine Strategie läuft gut. Die Römer können in den Spielen den belastenden Alltag verdrengen. Aber das Bauwesen leidet und mehr und mehr Römer bemerken die Sparmassnahmen im Alltag. Besonders Brandvorbeugung wäre hilfreich.")
 
     if st.button("OK", key = "ok_14"):
         st.session_state["index"] += 3 #211
 
-if st.session_state["index"] == 211:
+elif st.session_state["index"] == 211:
     st.header("Wie reagierst du?")
 
     col1, col2, col3 = st.columns(3)
@@ -503,13 +541,13 @@ if st.session_state["index"] == 211:
     st.write("B) Ich werde mich nicht zu sehr auf das Problem zu fokusieren. Neue Vorschriften bedeuten höhere Kosten für andere Behörden und die Besitzer von Wohnhäuser könnten damit relativieren ihre Preise weiter zu erhöhen. Das würde besonders die Plebejer verärgern.")
     st.write("C) Ich könnte auf Freiwilligkeit setzen. Mit öffendlichen Aufrufen könnte ich den Feuerwehrmännern eine Bühne geben und die Hausbezitzer dazu auffordern Brandschutz umzusetzen. So sieht es aus als ob sich die Regierung kömmert, ohne das die Hausbesitzer dazu gezwungen werden.")
 
-if st.session_state["index"] == 212:
+elif st.session_state["index"] == 212:
     st.write("Okay, dein Plan findet Zustimmung, aber es gibt einen Haken: die Bauprojekte dauern lange und viele Sklaven die ansonsten im Bauwesen tätig wären, sind aktuell im Krieg.")
 
     if st.button("OK", key = "ok_15"):
         st.session_state["index"] += 5 #217
 
-if st.session_state["index"] == 217:
+elif st.session_state["index"] == 217:
     st.header("Wie gehst du damit um?")
 
     col1, col2, col3 = st.columns(3)
@@ -530,13 +568,13 @@ if st.session_state["index"] == 217:
     st.write("B) Ich fokusiere mich doch auch auf die Spiele, um die angespannte Innenpolitische Situation etwas zu regulieren.")
     st.write("C) Ich versuche die Konsuln speziefisch davon zu überzeugen dem Bauwesen mehr Kapazietäten zuzugestehen, um die Römer im Alltag nicht an mögliche Schwächen des Staates zu erinnern.")
 
-if st.session_state["index"] == 216:
+elif st.session_state["index"] == 216:
     st.write("Deine Strategie zeigt Wirkung. Und da so viele Römer angehörige im Krieg haben, finden sie Sicherheit in dem Glaube. Aber diese Strategie hat ihre Limitierung, da nicht jeder in Rom den Glauben so priorisiert und Rom...")
 
 
 #Quästur
 
-if st.session_state["index"] == 5:
+elif st.session_state["index"] == 5:
     st.write("Als Verantwortlicher für Steuereinnahmen fällt dir auf, dass sich dieses Jahr fast 10% der Plebejer aus Protest weigerte Steuern zu zahlen. Die Armee benötigt diese aber dringend.")
 
     if st.button("OK", key= "ok_1"):
@@ -562,7 +600,7 @@ if st.session_state["index"] == 5:
         st.write("B) Schicke eine Delegation von Senatoren, um mit den Protestieren zu verhandeln.")
         st.write("C) Erhöhe die Steuern generell und starte ein öffendliche Kampange gegen die Protestieren, um sie als Feinde darzustellen und die Bevölkerung gegen sie aufzuhetzen.")
        
-if st.session_state["index"] == 13:
+elif st.session_state["index"] == 13:
     st.write("Die Präsenz der Steuereintreiber hat mehr Plebejer gegen die Regierung aufgehätzt und auch die beiden Konsuln haben sich öffendlich gegen dich ausgesprochen.")
     
     if st.button("OK", key= "ok_2"):
@@ -589,13 +627,13 @@ if st.session_state["index"] == 13:
         st.write("B) Ich erkläre der Öffendlichkeit meinen Standpunkt und betone die Wichtigkeit der Steuereinnahmen für die Armee in unserem aktuellen Krieg gegen umlegende Stämme.")
         st.write("C) Ich rede mit dem befreundeten Ädile, damit er eine Spiel organisiert, die Angst vor unseren Feinden im Krieg. Mit dem Ziel die Protestierenden durch Angst zur Konformität zu zwingen.")
 
-if st.session_state["index"] == 17:
+elif st.session_state["index"] == 17:
     st.write("Der Dialog mit den Bürgern hat die Situation beruhigt. Aber im Senat sind viele Senatoren nicht bereit den Plebejern Zugeständnisse zu geben.")
 
     if st.button("OK", key = "ok_11"):
         st.session_state["index"] += 90 #107
 
-if st.session_state["index"] == 107:
+elif st.session_state["index"] == 107:
 
     col1, col2, col3 = st.columns(3)
 
@@ -616,12 +654,12 @@ if st.session_state["index"] == 107:
     st.write("B) Ich schlage vor, die Steuern zu senken, wenn neue Gebiete erobert wurden und wir die Kriegsbeute in die Staatskasse einzahlen. Dann bleiben alle fokusiert auf unsere Kriege und es bietet Hoffnung auf bessere Zeiten.")
     st.write("C) Ich spreche an, dass wohlhabende Patrizier mehr Steuern zahlen könnten, um die Plebejer zu besämptigen. Wenn sie nicht bereit sind ihnen Zugeständnisse zuzugestehen.")
 
-if st.session_state["index"] == 21:
+elif st.session_state["index"] == 21:
     st.write("Der Anteil der Personen, die gegen die Steuererhöhungen sind ist viel höher als gedacht. Auch Patrizier schließen sich den Protesten an. Steht ein Bürgerkrieg bevor? Zum Glück ist dein Magistratum nicht so bedeutend und du die Proteste sind mehr gegen die Konsuln gerichtet.")
     if st.button("OK", key = "ok_12"):
         st.session_state["index"] += 100 #121
 
-if st.session_state["index"] == 121:
+elif st.session_state["index"] == 121:
 
     col1, col2, col3 = st.columns(3)
 
